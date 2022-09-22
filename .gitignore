@@ -1,0 +1,17 @@
+#ignore vendor folder managed by composer
+vendor/
+
+#ignore temporary files
+tmp/
+
+#ignore confituration
+config/
+
+#ignore .git folder that I don't understand
+.git/
+
+#ignore .idea folder that I don't understand
+.idea/
+
+#ignore phpunit results cache
+.phpunit.result.cache

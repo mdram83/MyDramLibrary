@@ -1,0 +1,436 @@
+@media screen and (max-width: 400px) {
+    
+    #logoTopText {
+        font-size: large;
+        /* display: none; */
+    }
+
+    div#app {
+        max-width: 95vw;
+    }
+
+    div.messageWrapper {
+        top: 56px;
+        right: 2px;
+        max-width: 85vw;
+        min-width: 85vw;
+    }
+
+    div.buttonWrapper {
+        top: 2px;
+        right: 2px;
+    }
+
+    div.titleGeneral {
+        max-width: 55vw;
+    }
+
+    p.listTitle {
+        font-size: 3.5vw;
+    }
+
+    p.listAuthor {
+        font-size: 2.0vw;
+    }
+
+    p.listDetails {
+        display: none;
+    }
+
+    div.titleCategories {
+        display: none;
+    }
+
+}
+
+@media screen and (min-width: 401px) {
+
+    div#app {
+        max-width: 85vw;
+    }
+
+    div.messageWrapper {
+        top: 56px;
+        right: 2px;
+        max-width: 90vw;
+        min-width: 90vw;
+    }
+
+    div.buttonWrapper {
+        top: 2px;
+        right: 2px;
+    }
+
+    div.titleGeneral {
+        max-width: 50vw;
+    }
+
+    p.listTitle {
+        font-size: 12pt;
+    }
+
+    p.listAuthor {
+        font-size: small;
+    }
+}
+
+@media screen and (min-width: 475px) {
+
+    div.titleGeneral {
+        max-width: 260px;
+    }
+
+    div.messageWrapper {
+        top: 72px;
+        right: 12px;
+        max-width: 400px;
+        min-width: 400px;
+    }
+
+    div.buttonWrapper {
+        top: 12px;
+        right: 12px;
+    }
+
+}
+
+@media screen and (min-width: 801px) {
+
+    div#app {
+        max-width: 70vw;
+    }
+
+}
+
+
+
+body {
+    background-color: rgb(245, 245, 245);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: auto;
+}
+
+.wrapper {
+    margin-right: auto;
+    margin-left:  auto;
+    padding: 0px;
+    position: relative;
+}
+
+div.pageTopBar {
+    margin: 0 0 10px;
+    padding: 4px;
+    position: relative;
+}
+
+div.burgerContainer {
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-left: 4px;
+}
+
+div.burgerBar {
+    width: 24px;
+    height: 3px;
+    background-color: royalblue;
+    margin: 6px 0;
+}
+
+div.logoContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+div.logoTop {
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: royalblue;
+    font-weight: bolder;
+    font-size: xx-large;
+    font-family: Tahoma, Verdana, sans-serif;
+}
+
+.inherited {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.inherited:hover {
+    text-decoration: none;
+}
+
+.blueFont {
+    color: rgb(28, 69, 191);
+}
+
+.redFont {
+    color: rgb(186, 0, 0);
+}
+
+.darkblueFont {
+    color: rgb(0, 36, 158);
+}
+
+
+div#app {
+    position: relative;
+    background-color: white;
+    border-radius: 20px;
+    border: 3px solid #1bb333;
+    padding: 0px;
+    box-shadow: 0px 0px 20px 0px grey;
+    margin: auto;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+}
+
+div.appTopBar {
+    border: 1px solid #000000; /* temporary */
+    padding: 10px 0;
+    text-align: center;
+    color: rgb(28, 69, 191);
+}
+
+div.appTopBar::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+div.messageWrapper {
+    margin-top: 0;
+    padding: 0;
+    position: fixed;
+    z-index: 1;
+    text-align: right;
+}
+
+div.buttonWrapper {
+    margin-top: 0;
+    padding: 0;
+    position: fixed;
+    z-index: 1;
+    text-align: right;
+}
+
+div.addTitle {
+    margin: 0;
+    padding: 0;
+    display: block;
+    position: relative;
+    right: 0px;
+    top: 0px;
+}
+
+button#addTitle {
+    background-color: #3dd555;
+    color: white;
+    margin-top: 0;
+    padding: 0;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: larger;
+}
+
+div.message {
+    display: block;
+    font-size: small;
+    margin: 4px 0 0;
+    padding: 4px 8px;
+    text-align: left;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+div.messageError {
+    background-color: rgba(255, 207, 207, 0.9);
+    border-color: rgb(92, 0, 0);
+    color: rgb(186, 0, 0);
+}
+
+div.messageSuccess {
+    background-color: rgba(192, 209, 255, 0.95);
+    border-color: rgb(0, 0, 92);
+    color: rgb(0, 21, 90);;
+}
+
+div.listWrapper {
+    padding: 0px;
+    margin: auto;
+    margin-bottom: 0px;
+}
+
+div.listElement {
+    padding: 10px 2px 10px 0px;
+    max-width: 400px; /* required, do I want to have 2 next to each other? */
+    margin: auto;
+    vertical-align: top;
+}
+
+div.listPicture {
+    padding: 0px;
+    max-width: 128px;
+    margin: 0px;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+
+img.listPicture {
+    max-width: 128px;
+    width: 30vw;
+}
+
+div.titleGeneral {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+
+div.titleCategories {
+    border: inherit; /* temp property so VS don't say about issue - no propery */
+}
+
+p.listTitle {
+    margin: 0px 0px 4px 0px;
+    padding: 0px 1px 0px 1px;
+}
+
+a.listTitle, a.listTitle:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+p.listAuthor {
+    margin: 0px 0px 4px 0px;
+    padding: 0px 1px 0px 1px;
+    color: rgb(69, 69, 69);
+}
+
+p.listDetails {
+    margin: 0px 0px 4px 0px;
+    padding: 0px 1px 0px 1px;
+    font-size: small;
+    color: rgb(69, 69, 69);
+}
+
+p.listCategory {
+    font-size: x-small;
+    background-color: darkgrey;
+    color: white;
+    padding: 2px 8px 4px;
+    margin: 4px 0px 4px 4px;
+    border: none;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+p.listDelete {
+    margin: 0px 0px 4px 0px;
+    padding: 1em 1px 0px 1px;
+    font-size: small;
+    font-weight: bold;
+}
+
+a.listDelete, a.listDelete:hover {
+    text-decoration: none;
+}
+
+
+
+div.appTitle {
+    text-align: center;
+    margin: 12px 0px 4px;
+    color: rgb(28, 69, 191);
+    font-size: larger;
+}
+
+span.formRequired {
+    color: red;
+    font-weight: bold;
+}
+
+span.formMore {
+    font-weight: normal;
+}
+
+a.formMore {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.titleForm {
+    margin: auto;
+    max-width: 600px;
+    padding: 18px 12px 6px 24px;
+}
+
+.titleForm li {
+    padding: 0;
+    display: block;
+    list-style: none;
+    margin: 6px 0 0 0;
+}
+
+.titleForm label {
+    margin: 0 0 0 0;
+    padding: 0;
+    display: block;
+    font-weight: bold;
+    font-size: small;
+}
+
+input.title, textarea.title {
+    width: 100%;
+    padding: 12px;
+    margin: 2px 0 6px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0 0 0px 1000px rgb(255, 255, 255) inset;
+    box-shadow: 0 0 0px 1000px rgb(255, 255, 255) inset;
+}
+
+textarea.title {
+    font-family: inherit;
+    font-size: normal;
+}
+
+input[type=submit].title {
+    width: 100%;
+    background-color: royalblue;
+    color: white;
+    padding: 12px;
+    margin-top: 16px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    -webkit-box-shadow: 0 0 0px 1000px royalblue inset;
+    box-shadow: 0 0 0px 1000px royalblue inset;
+}
+
+button#isbnCheck {
+    width: 46%;
+    background-color: royalblue;
+    color: white;
+    padding: 12px;
+    margin-top: 16px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    -webkit-box-shadow: 0 0 0px 1000px royalblue inset;
+    box-shadow: 0 0 0px 1000px royalblue inset;
+}
