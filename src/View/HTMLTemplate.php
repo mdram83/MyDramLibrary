@@ -3,6 +3,7 @@
 namespace MyDramLibrary\View;
 
 use Exception;
+use MyDramLibrary\Configuration\DirectoryConfiguration;
 
 class HTMLTemplate implements MVCTemplate
 {
@@ -307,7 +308,7 @@ class HTMLTemplate implements MVCTemplate
                     HTMLTemplateConfig::TEMPLATE_FILE_OPENING,
                     HTMLTemplateConfig::TEMPLATE_TAG_CLOSE_BRACKET
                 );
-                $filePath = "templates/{$filename}.php"; // też z konfigu
+                $filePath = DirectoryConfiguration::templatesPath() . $filename . '.php';
                 if (file_exists($filePath)) {
                     ob_start();
                     $data = $this->data;
@@ -317,7 +318,7 @@ class HTMLTemplate implements MVCTemplate
                     return $childSection->process();
                 } else {
                     throw new Exception('Template included file missing');
-                    // Może zastosować jakąś bardziej specyfuczną klasę dziedziczącą po Exception?
+                    // TODO: better exception handling
                 }
             },
             $this->content

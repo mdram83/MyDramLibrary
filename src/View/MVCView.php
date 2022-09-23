@@ -2,6 +2,8 @@
 
 namespace MyDramLibrary\View;
 
+use MyDramLibrary\Configuration\DirectoryConfiguration;
+
 class MVCView
 {
     protected string $templateFilePath;
@@ -10,11 +12,11 @@ class MVCView
 
     public function __construct(string $filename, array $data = array())
     {
-        $filePath = "templates/{$filename}.php"; // też z konfigu
+        $filePath = DirectoryConfiguration::templatesPath() . $filename . '.php';
         if (file_exists($filePath)) {
             $this->templateFilePath = $filePath;
         } else {
-            throw new \Exception('Template file missing');
+            throw new \Exception('Template file missing: ' . $filePath);
             // Może zastosować jakąś bardziej specyfuczną klasę dziedziczącą po Exception?
         }
         $this->templateData = $data;
