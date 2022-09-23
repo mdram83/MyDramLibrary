@@ -17,7 +17,7 @@ class MVCView
             $this->templateFilePath = $filePath;
         } else {
             throw new \Exception('Template file missing: ' . $filePath);
-            // Może zastosować jakąś bardziej specyfuczną klasę dziedziczącą po Exception?
+            // TODO dedicated exception handling
         }
         $this->templateData = $data;
     }

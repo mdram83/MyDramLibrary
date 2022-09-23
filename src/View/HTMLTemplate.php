@@ -402,16 +402,12 @@ class HTMLTemplate implements MVCTemplate
             if (is_array($data) && count($data) > 0) {
                 return false;
             }
-            return ($data == '') ? true : false;
+            return $data == '';
         }
         return
-            (
-                !isset($this->data[$variableName])
-                || ($this->data[$variableName] == '')
-                || (is_array($this->data[$variableName]) && count($this->data[$variableName]) == 0)
-            )
-            ? true
-            : false;
+            !isset($this->data[$variableName])
+            || ($this->data[$variableName] == '')
+            || (is_array($this->data[$variableName]) && count($this->data[$variableName]) == 0);
     }
 
     protected function encode(?string $content): ?string
@@ -422,22 +418,18 @@ class HTMLTemplate implements MVCTemplate
     protected function hasIndexFunction(string $context): bool
     {
         return
-            (strpos(
+            strpos(
                 $context,
                 HTMLTemplateConfig::TEMPLATE_FUNCTION_SEPARATOR . HTMLTemplateConfig::TEMPLATE_FUNCTION_INDEX_TAG
-            ) !== false)
-            ? true
-            : false;
+            ) !== false;
     }
 
     protected function hasEncodeFunction(string $context): bool
     {
         return
-            (strpos(
+            strpos(
                 $context,
                 HTMLTemplateConfig::TEMPLATE_FUNCTION_SEPARATOR . HTMLTemplateConfig::TEMPLATE_FUNCTION_ENCODE_TAG
-            ) !== false)
-            ? true
-            : false;
+            ) !== false;
     }
 }

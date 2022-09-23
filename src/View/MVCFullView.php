@@ -2,6 +2,8 @@
 
 namespace MyDramLibrary\View;
 
+// TODO used only for registration, change name to RegistrationView or similar
+
 class MVCFullView extends MVCView
 {
     protected function enrichContent(): void
