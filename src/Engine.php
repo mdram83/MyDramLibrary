@@ -44,13 +44,17 @@ class Engine
 
     private function initiateController(): void
     {
-        $defaultModuleName = ($this->userSession->isLoggedIn()) ? ControllerConfiguration::DEFAULT_LOGGED_USER : ControllerConfiguration::DEFAULT_NOT_LOGGED_USER;
+        $defaultModuleName =
+            ($this->userSession->isLoggedIn()) ?
+                ControllerConfiguration::DEFAULT_LOGGED_USER :
+                ControllerConfiguration::DEFAULT_NOT_LOGGED_USER;
         $moduleName = ucfirst(strtolower($this->request->getGetParam('module') ?? $defaultModuleName));
         try {
             $controllerClassName = ControllerConfiguration::CONTROLLER_NAMESPACE . $moduleName;
             $controller = new $controllerClassName();
             // above doesn't work as this throws fatal error and not exception.
-            // need to rebuild to check if there is a class and maybe inside controller (run) check if there is public method?
+            // need to rebuild to check if there is a class
+            // and maybe inside controller (run) check if there is public method?
         } catch (Exception) {
             $controllerClassName = ControllerConfiguration::CONTROLLER_NAMESPACE . $defaultModuleName;
             $controller = new $controllerClassName();

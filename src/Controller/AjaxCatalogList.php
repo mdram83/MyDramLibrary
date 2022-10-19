@@ -16,39 +16,36 @@ class AjaxCatalogList extends MVCAjaxControllerImplementation
 
     protected function getCategoryList(): void
     {
-        $categoryCollection = CategoryFactory::instance()->getAllCategories();
-        $categoryCounter = 0;
-        foreach ($categoryCollection as $id => $category) {
-            $categories[$categoryCounter]['id'] = $id;
-            $categories[$categoryCounter]['category'] = $category->getName();
-            $categoryCounter++;
+        $categories = [];
+        foreach (CategoryFactory::instance()->getAllCategories() as $id => $category) {
+            $categories[] = ['id' => $id, 'category' => $category->getName()];
         }
-        $this->loadView(new MVCView('AjaxGenericJSONArray', $categories ?? array()));
+        $this->loadView(new MVCView('AjaxGenericJSONArray', $categories));
     }
 
     protected function getPublisherList(): void
     {
-        $publisherCollection = PublisherFactory::instance()->getAllPublishers();
-        $publisherCounter = 0;
-        foreach ($publisherCollection as $id => $publisher) {
-            $publishers[$publisherCounter]['id'] = $id;
-            $publishers[$publisherCounter]['publisher'] = $publisher->getName();
-            $publisherCounter++;
+        $publishers = [];
+        foreach (PublisherFactory::instance()->getAllPublishers() as $id => $publisher) {
+            $publishers[] = ['id' => $id, 'publisher' => $publisher->getName()];
         }
-        $this->loadView(new MVCView('AjaxGenericJSONArray', $publishers ?? array()));
+        $this->loadView(new MVCView('AjaxGenericJSONArray', $publishers));
     }
 
     protected function getAuthorNames(): void
     {
+        $data = [];
         foreach (AuthorFactory::instance()->getAllAuthors() as $authorId => $author) {
             $firstname = $author->getFirstname();
             $lastname = $author->getLastname();
+
             $data['author'][$authorId]['firstname'] = $firstname;
             $data['author'][$authorId]['lastname'] = $lastname;
             $data['author'][$authorId]['authorName'] = $author->getAuthorName();
+
             $data['firstname'][$firstname] = $firstname;
             $data['lastname'][$lastname] = $lastname;
         }
-        $this->loadView(new MVCView('AjaxGenericJSONArray', $data ?? array()));
+        $this->loadView(new MVCView('AjaxGenericJSONArray', $data));
     }
 }

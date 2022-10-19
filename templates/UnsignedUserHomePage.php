@@ -9,11 +9,9 @@
        
         <div class="registrationTitle">Log in</div>
 
-        <?php
-        if (isset($data['failedLogin'])) {
-            echo "<div class=\"loginFailed\">{$data['failureMessage']}</div>";
-        }
-        ?>
+        <?php if (isset($data['failedLogin'])): ?>
+            <div class="loginFailed"><?= $data['failureMessage']; ?></div>
+        <?php endif ?>
 
         <form method="POST" action="?action=login">
 
@@ -68,10 +66,10 @@
         <br>
         <br>
         Join our
-        <b><?php echo $data['userCount']; ?> users</b>
+        <b><?= $data['userCount']; ?> users</b>
         <br>
-        from <b><?php echo $data['cityCount']; ?> cities </b>
+        from <b><?= $data['cityCount']; ?> cities </b>
         <br>
-        storing <b><?php echo $data['titleCount']; ?> titles </b>
+        storing <b><?= $data['titleCount']; ?> titles </b>
     </div>
 </div>

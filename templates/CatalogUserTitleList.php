@@ -6,7 +6,7 @@
     <div id="app">
 
         <div class="listWrapper">
-            
+
             {loop:titles}
             <div class="listElement">
                 <div class="listPicture"><img class="listPicture" src="images\general\book_open.png" alt="cover"></div>

@@ -1,6 +1,6 @@
     
     <div class="messageWrapper">
-        <div class="message <?php echo ($data['status'] == 1) ? 'messageSuccess' : 'messageError'; ?>"
+        <div class="message <?= ($data['status'] == 1) ? 'messageSuccess' : 'messageError'; ?>"
             onclick="this.style.display = 'none';">
 
             {:message}
