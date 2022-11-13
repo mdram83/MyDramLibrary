@@ -1,6 +1,12 @@
 # wwwBiblioteka
 
-Refactor Ideas
+PROJECT ON HOLD AS I STARTED TO LEARN LARAVEL AND IT IS REALLY MUCH EASIER TO USE EXISTING FRAMEWORK FOR SO MUCH STUFF
+SEE MyDramLibL for latest code.
+
+
+--------------------------------------------------------------------------------------------------------
+
+Refactor Ideas (In case I will go back to building app from scratch)
 
 - Exceptions - review used exception classes, adjust (e.g. use MyDramLibraryException as main class for subclasses of my project so I can easily recognize them from standard PHP exceptions, use named constructors to handle message, aka Factory - to be considered, with error code and maybe severity?)
 - Collection of Notification object for user instead of exceptions? Interestin and possibly better idea
